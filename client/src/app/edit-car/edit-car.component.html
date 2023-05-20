@@ -1,0 +1,58 @@
+<nav>
+  <ul>
+    <li id="page-header">Page principal</li>
+    <li class="navbar-routes">
+      <a routerLink="/home"
+        ><button mat-raised-button color="primary">List of cars</button></a
+      >
+    </li>
+    <li class="navbar-routes">
+      <a routerLink="/addcar">
+        <button mat-raised-button color="primary">Add car</button></a
+      >
+    </li>
+  </ul>
+</nav>
+
+<div class="form-div">
+  <h2>Edit car</h2>
+  <div class="form-container">
+    <table class="add-car-table" cellspacing="0">
+      <tr>
+        <!-- car id -->
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Car ID</mat-label>
+            <input matInput disabled [value]="id_car" />
+          </mat-form-field>
+        </td>
+        <!-- model -->
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Model</mat-label>
+            <input [(ngModel)]="model" matInput />
+          </mat-form-field>
+        </td>
+        <!-- hp -->
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>HP</mat-label>
+            <input [(ngModel)]="hp" matInput type="number" />
+          </mat-form-field>
+        </td>
+        <!-- marque -->
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Marque</mat-label>
+            <input [(ngModel)]="marque" matInput />
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="button-container">
+    <button mat-raised-button color="primary" (click)="editCar(id_car)">
+      Save changes
+    </button>
+  </div>
+</div>

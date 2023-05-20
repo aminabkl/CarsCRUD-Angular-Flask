@@ -1,0 +1,49 @@
+.form-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+td {
+  padding-right: 8px;
+  display: block;
+}
+
+.form-container {
+  margin-bottom: 20px;
+}
+
+.add-car-table {
+  width: 100%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+#page-header {
+  font-size: 25px;
+  color: #3f51b5;
+  font-weight: bold;
+}
+nav {
+  background-color: white;
+  padding: 10px 0;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.5);
+}
+ul {
+  list-style: none;
+  display: inline-flex;
+  gap: 50px;
+}
+a {
+  text-decoration: none;
+  color: #000;
+  padding: 10px;
+}
+.navbar-routes:hover {
+  text-decoration: underline;
+  color: #000;
+}

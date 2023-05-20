@@ -1,0 +1,66 @@
+<nav>
+  <ul>
+    <li id="page-header">Page principal</li>
+    <li class="navbar-routes">
+      <a routerLink="/home"
+        ><button mat-raised-button color="primary">List of cars</button></a
+      >
+    </li>
+    <li class="navbar-routes">
+      <a routerLink="/addcar">
+        <button mat-raised-button color="primary">Add car</button></a
+      >
+    </li>
+  </ul>
+</nav>
+
+<div class="mat-elevation-z8 data-table">
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+    <!-- Id Column -->
+    <ng-container matColumnDef="id_car">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+      <td mat-cell *matCellDef="let row">{{ row.id_car }}</td>
+    </ng-container>
+
+    <!-- Model Column -->
+    <ng-container matColumnDef="model">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Model</th>
+      <td mat-cell *matCellDef="let row">{{ row.model }}</td>
+    </ng-container>
+    <!-- HP Column -->
+    <ng-container matColumnDef="hp">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>HP</th>
+      <td mat-cell *matCellDef="let row">{{ row.hp }}</td>
+    </ng-container>
+    <!-- Marque Column -->
+    <ng-container matColumnDef="marque">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Marque</th>
+      <td mat-cell *matCellDef="let row">{{ row.marque }}</td>
+    </ng-container>
+    <!-- Edit Column -->
+    <ng-container matColumnDef="crud">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+      <td mat-cell *matCellDef="let car">
+        <button mat-icon-button color="primary" (click)="editRoute(car)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="deleteCar(car.id_car)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator
+    #paginator
+    [length]="dataSource?.data?.length"
+    [pageIndex]="0"
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 20]"
+    aria-label="Select page"
+  >
+  </mat-paginator>
+</div>

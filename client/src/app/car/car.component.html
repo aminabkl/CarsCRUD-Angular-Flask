@@ -1,0 +1,46 @@
+<nav>
+  <ul>
+    <li id="page-header">Page principal</li>
+    <li class="navbar-routes">
+      <a routerLink="/home"
+        ><button mat-raised-button color="primary">List of cars</button></a
+      >
+    </li>
+    <li class="navbar-routes">
+      <a routerLink="/addcar">
+        <button mat-raised-button color="primary">Add car</button></a
+      >
+    </li>
+  </ul>
+</nav>
+
+<div class="form-div">
+  <h2>Add new car</h2>
+  <div class="form-container">
+    <table class="add-car-table" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Model</mat-label>
+            <input [(ngModel)]="model" matInput />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>HP</mat-label>
+            <input [(ngModel)]="hp" matInput type="number" />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Marque</mat-label>
+            <input [(ngModel)]="marque" matInput />
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="button-container">
+    <button mat-raised-button color="primary" (click)="saveMe()">Add</button>
+  </div>
+</div>
